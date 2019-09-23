@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="survey1.css">
+  <title>Survey-FCC</title>
+</head>
+
+<body>
+  <h4 style="color:azure;text-align:center;margin-bottom:0">Survey Form</h4>
+  <div class="box">
+    <label style="margin-left:35%">Lets us know how we can improve freeCodeCamp</label>
+    <div class="row ">
+      <div class="col-md-6 lol">
+        <label class="last" for="#fad*">*Name: </label>
+        <br>
+        <label class="last" for="#fas*">*Email: </label>
+        <br>
+        <label class="last" for="#lol*">*Age: </label>
+        <br>
+        <label class=" last" for="#has">Which option best describes your current role?</label>
+        <br>
+
+      </div>
+      <div class="col-md-6">
+        <input class="last1" type='text' id='fad' placeholder="Enter your name"/>
+        <br>
+        <input class="last1" type='text' id='fas' placeholder="Enter email" />
+        <br>
+        <input class="last1" type='text' id='lol' placeholder="Age" />
+        <br>
+        <select class="last1"  onchange="sel(this)">
+          <option id='k1' name='role' value="Student">Student</option>
+          <option id='k2' name="role" value="Teacher">Teacher</option>
+          <option id='k3' name="role" value="Working Professional">Working Professional</option>
+          <option id='k4' name="role" value="Homemaker">Homemaker</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class='col-md-6 lol'>
+        <label for="lol1">How likely it you would recommend<br> to a friend</label>
+      </div>
+      <div class="col-md-6">
+        <input name='rex' value="Definately" onchange="rad()" type="radio">Definately</input>
+        <br>
+        <input name='rex' value="Maybe" onchange="rad()" type="radio">Maybe</input>
+        <br>
+        <input name='rex' value="No" onchange="rad()" type="radio">No</input>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class='col-md-6 lol'>
+        <label class="last">What do like in FCC?</label>
+      </div>
+      <div class="col-md-6">
+        <select class="last1" id="has" onchange="dew()">
+          <option value="Select an option">Select an option</option>
+          <option value="User interface">User Interface</option>
+          <option value="Tutors">Tutors</option>
+          <option value="Content">Content</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class='col-md-6 lol'>
+        <label for="lol1">Things that should be improved in the future<br> (Check all that apply)</label>
+      </div>
+      <div class="col-md-6">
+        <input name='likely' value="Frontend" onchange="chk()" type="checkbox">Frontend</input>
+        <br>
+        <input name='likely' value="Backend" onchange="chk()" type="checkbox">Backend</input>
+        <br>
+        <input name='likely' value="Challenges" onchange="chk()" type="checkbox">Challenges</input>
+        <br>
+        <input name='likely' value="Open Source Community" onchange="chk()" type="checkbox">Open Source Community</input>
+        <br>
+        <input name='likely' value="Gitter Help Rooms" onchange="chk()" type="checkbox">Gitter Help Rooms</input>
+        <br>
+        <input name='likely' value="Videos" onchange="chk()" type="checkbox">Videos</input>
+        <br>
+        <input name='likely' value="City Meetups" onchange="chk()" type="checkbox">City Meetups</input>
+        <br>
+        <input name='likely' value="Wiki" onchange="chk()" type="checkbox">Wiki</input>
+        <br>
+        <input name='likely' value="Forum" onchange="chk()" type="checkbox">Forum</input>
+        <br>
+        <input name='likely' value="Additional Courses" onchange="chk()" type="checkbox">Additional Courses</input>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div   class='col-md-6 lol'>
+        <label class="last">Comments or Suggestions</label>
+      </div>
+      <div class="col-md-6">
+        <textarea id="Comments" class='last1' rows="4" cols="50" placeholder="Enter text">
+
+                                    </textarea>
+      </div>
+    </div>
+     <div class="row">
+    <div class="col-md-6">
+      <button type="button" style="margin-left:85%;margin-bottom:10px" class="btn btn-primary" onclick="lol()">Submit</button>
+    </div>
+    <div class="col-md-6">
+      <div id='ip'>
+      <button type="button" style="margin-left:0%;margin-bottom:10px" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>View</button>
+    </div>
+    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Preview of Submitted Form</h5>
+           
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            
+          </div>
+          <div class="modal-body">
+            <label id="nam"></label>
+            <br>
+            <label id="nam1"></label>
+            <br>
+            <label id="nam2"></label>
+            <br>
+            <label id="nam3"></label>
+            <br>
+            <label id="nam4"></label>
+            <br>
+            <label id="nam5"></label>
+            <br>
+            <label id="nam6"></label>
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script>
+    var obj = {
+      name:"",
+      age:"",
+      email:"",
+      role:"",
+      improve:[],
+      friends:"",
+      whatLike:"",
+      comment:" ",
+}
+function sel(n){
+  console.log(n.value);
+  obj.role=n.value;
+  
+}
+
+function chk(){
+  var arr=document.getElementsByName('likely');
+  obj.improve=[];
+  arr.forEach(item=>{
+    if(item.checked)
+    {
+      obj.improve.push(item.value);
+    }
+  });
+  
+}
+
+function rad(){
+  var arr=document.getElementsByName('rex');
+  
+  arr.forEach(item=>{
+    if(item.checked)
+    {
+      obj.friends=item.value;
+    }
+  });
+  
+}
+
+function dew(){
+var msg=document.getElementById('has').value;
+obj.whatLike=msg;
+}
+
+
+function lol()
+{ var name=document.getElementById('fad').value;
+var email=document.getElementById('fas').value;
+var age=document.getElementById('lol').value;
+var comment=document.getElementById('Comments').value;
+obj.name=name;
+obj.email=email;
+obj.age=age;
+obj.comment=comment;
+console.log(obj);
+var hash="<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >View</button>"
+document.getElementById('ip').innerHTML=hash;
+var msg=obj.name.toString();
+var fact="Name: "+msg;
+document.getElementById('nam').innerHTML=fact;
+var msg1=obj.email.toString();
+var fact1="Email: "+msg1;
+document.getElementById('nam1').innerHTML=fact1;
+var msg2=obj.age.toString();
+var fact2="Age: "+msg2;
+document.getElementById('nam2').innerHTML=fact2;
+var msg3=obj.role.toString();
+var fact3="Current Role: "+msg3;
+document.getElementById('nam3').innerHTML=fact3;
+var msg4=obj.friends.toString();
+var fact4="How likely are you going to recommend it to friends?: "+msg4;
+document.getElementById('nam4').innerHTML=fact4;
+var msg5=obj.whatLike.toString();
+var fact5="What do you like about FCC?: "+msg5;
+document.getElementById('nam5').innerHTML=fact5;
+var msg6=obj.improve.toString();
+var fact6="Fields to improve: "+msg6;
+document.getElementById('nam6').innerHTML=fact6;
+
+}
+
+
+  </script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

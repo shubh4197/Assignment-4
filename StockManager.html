@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="StockManager.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+    <div class="row">
+        <div class="col-md-4 past">
+            <form>
+                <div class="form-group">
+                  <label>ID</label>
+                  <input type="text" class="form-control"  value=1 id="fn" aria-describedby="emailHelp"  required>
+                 
+                </div>
+                <div class="form-group">
+                  <label >Code</label>
+                  <input type="text" class="form-control" id="sn" placeholder="Code"  required>
+                </div>
+                <div class="form-group">
+                    <label >Unit Price</label>
+                    <input type="number" class="form-control" id="tn" placeholder="Unit Price" required>
+                  </div>
+                  <div class="form-group">
+                    <label >Quantity</label>
+                    <input type="number" class="form-control" id="4n" placeholder="Quantity" required>
+                  </div>
+               
+               <input  type="button" value="Add" onclick="lol()"> 
+
+              </form>
+          <h3 id="hi2" class="cake">Total:</h3>
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" id="key" data-target="#exampleModal" disabled>
+    Payment Receipt </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Payment Receipt</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3" style="border-right: 2px solid black">
+                    <h5>
+                        Address
+                    </h5>
+                    <p id = "addr1"></p>
+                    <h5>Phone #</h5>
+                    <p id = "phn1"></p>
+                </div>
+                <div class="col-md-6 offset - 3">
+                  <table>
+                    <thead>
+                    <tr >
+                        <td class="last1">ID</td>
+                        <td class="last1">Code</td>
+                        <td class="last1">Unit Price</td>
+                        <td class="last1">Quantity</td>
+                        <td class="last1">Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id='hi4' ></tbody>
+            </table>
+            <h4 id="for" class="pad">Total:</h4>  
+                </div>
+            </div>
+        </div> 
+          
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+     <div class="col-md-8 laugh"> 
+     <table>
+         <thead>
+             <tr >
+                 <td class="last">ID</td>
+                 <td class="last">Code</td>
+                 <td class="last">Unit Price</td>
+                 <td class="last">Quantity</td>
+                 <td class="last">Total</td>
+                 <td></td>
+             </tr>
+         </thead>
+         <tbody id='hi1'></tbody>
+     </table>
+    </div>
+    </div>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary keys" data-toggle="modal" data-target="#exampleModal1" >
+  Place order
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Adress</label>
+          <input type="text" id = "line1" placeholder="Line 1" required style="width: 100%;border-radius: 2px"/>
+          <input type="text" id = "line2" placeholder="Line 2" style="width: 100%;border-radius: 2px"/>
+          <input type="text" id = "line3" placeholder="Line 3" style="width: 100%;border-radius: 2px"/>
+          
+      </div>
+      <div class="form-group">
+          <label>Phone</label>
+          <input type="text" id = "phone1" class="form-control" placeholder="#PhoneNumber" required/>
+      </div>
+      <div class="form-group">
+              <label>Zip Code</label>
+              <input type="text" class="form-control" placeholder="#ZipCode" required/>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="address()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <script>
+    var id=1;
+    var sum=0;
+    function t2(val1,val2){
+        var gn=1;
+         gn=val1*val2;
+        return gn;
+    }
+
+    
+    function lol()
+    {
+        var sn=document.getElementById("sn").value;
+        var tn=document.getElementById("tn").value;
+        var four=document.getElementById("4n").value;
+        var total=t2(tn,four);
+        var msg="<tr id="+id+"><td class='last'>"+id+"</td><td class='last'>"+sn+"</td><td class='last'>"+tn+"</td><td class='last'>"+four+"</td><td class='last'>"+total+"</td>";
+        var msg1="<tr id="+id+"><td class='last1'>"+id+"</td><td class='last1'>"+sn+"</td><td class='last1'>"+tn+"</td><td class='last1'>"+four+"</td><td class='last1'>"+total+"</td>";
+        document.getElementById('hi1').innerHTML+=msg;
+        document.getElementById('hi4').innerHTML+=msg1;
+        sum=sum+total;
+        document.getElementById('hi2').innerHTML="Total:"+sum;
+        document.getElementById('for').innerHTML="Total:"+sum;
+        id=id+1;
+        document.getElementById("fn").value=id;
+        document.getElementById("sn").value=null;
+        document.getElementById("tn").value=null;
+        document.getElementById("4n").value=null;
+    }
+    function address(){
+            var line1 = document.getElementById('line1').value;
+            var line2 = document.getElementById('line2').value;
+            var line3 = document.getElementById('line3').value;
+            var phone1 = document.getElementById('phone1').value;
+            document.getElementById('addr1').innerHTML = line1 + " <br>" + line2 + " <br>" + line3 + " <br>";
+            document.getElementById('phn1').innerHTML = phone1;
+            document.getElementById('key').disabled = false;
+            
+        }
+
+
+    
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
